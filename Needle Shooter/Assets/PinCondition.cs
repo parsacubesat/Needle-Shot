@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PinCondition : MonoBehaviour
@@ -12,13 +13,10 @@ public class PinCondition : MonoBehaviour
 
     private bool stopMovement = false;
 
-    public static int increase = 2;
-
     // Start is called before the first frame update
     void Start()
     {
         objectRigidBody = GetComponent<Rigidbody2D>();
-        increase += 2;
 
     }
 
@@ -34,7 +32,7 @@ public class PinCondition : MonoBehaviour
     {
         if(collision.tag == "circle")
         {
-            increase --;
+            EndGameManager.pins--;
             transform.SetParent(collision.transform);
             objectRigidBody.MovePosition(objectRigidBody.position + Vector2.up * speed * Time.deltaTime);
             stopMovement = true;

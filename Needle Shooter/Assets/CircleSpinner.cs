@@ -11,17 +11,14 @@ public class CircleSpinner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //turnSpeed = UnityEngine.Random.Range(-1, -7);
+        turnSpeed = 1.2f * EndGameManager.speedMultiplier;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(EndGameManager.numOfPins == 0)
-        {
-            turnSpeed = -2 * EndGameManager.speedMultiplier;
-        }
+
         transform.Rotate(0, 0, turnSpeed, Space.Self);
         Debug.Log("Turn Speed: " + turnSpeed);
     }

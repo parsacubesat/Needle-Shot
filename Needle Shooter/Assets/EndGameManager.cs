@@ -2,40 +2,71 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EndGameManager : MonoBehaviour
 {
     public static float speedMultiplier = 1f;
+
     public static int level = 1;
-    public static int numOfPins;
+    public static int highScoreTracker = 0;
+    public static int scoreTracker = 0;
+
+    public static int pins;
+    private static int currentPins;
+
+    public float speedRangeMinimum = 0;
+    public float speedRangeMaximum = 0;
+
+    public AudioSource GameWonSound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        currentPins = pins;
+        pins += 2;
     }
 
     void Update()
     {
-        Debug.Log("Level: " + level);
-        Debug.Log("Number of Pins: " + numOfPins);
-        if (PinCondition.increase == 0)
+        if (pins <= 0)
         {
-            GameWin();
+            scoreTracker = level;
+            GameWon();
         }
-
+        if(pins > 12)
+        {
+            pins = 12;
+        }
+        //Debug.Log("Level: " + level);
+        //Debug.Log("Number of Pins: " + pins);
 
     }
-    public void GameWin()
+    public void GameWon()
     {
+        GameWonSound.Play();
+        if(level > highScoreTracker)
+        {
+            highScoreTracker = level;
+        }
+        pins = currentPins + 2;
         level++;
-        numOfPins = PinCondition.increase;
-        //SceneManager.LoadScene(0);
+        float negativeSetter = Random.Range(0f, 1f);
 
+        if (negativeSetter > 0.5)
+            speedMultiplier = (Random.Range(speedRangeMinimum, speedRangeMaximum));
+        else if (negativeSetter < 0.5)
+            speedMultiplier = -(Random.Range(speedRangeMinimum, speedRangeMaximum));
+
+        //Debug.Log("Range: " + negativeSetter);
+        SceneManager.LoadScene(3);
     }
 
     public void GameLoss()
     {
-        SceneManager.LoadScene(0);
+        pins = 2;
+        level = 1;
+        speedMultiplier = 1f;
+        SceneManager.LoadScene(1);
     }
 }
