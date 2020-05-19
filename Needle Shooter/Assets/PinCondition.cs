@@ -23,6 +23,9 @@ public class PinCondition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenuManager.isPauseMenu)
+            Destroy(GameObject.FindWithTag("Unlanded"));
+
         float step = speed * Time.deltaTime;
         if (stopMovement == false)
             transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("circle").transform.position, step);
@@ -32,6 +35,7 @@ public class PinCondition : MonoBehaviour
     {
         if(collision.tag == "circle")
         {
+            transform.gameObject.tag = "needle";
             EndGameManager.pins--;
             transform.SetParent(collision.transform);
             objectRigidBody.MovePosition(objectRigidBody.position + Vector2.up * speed * Time.deltaTime);

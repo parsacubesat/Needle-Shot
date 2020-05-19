@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -167621825108181120}
   m_Layer: 0
   m_Name: Needle
-  m_TagString: needle
+  m_TagString: Unlanded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+  NeedleHit: {fileID: 0}
 --- !u!50 &-167621825108181120
 Rigidbody2D:
   serializedVersion: 4

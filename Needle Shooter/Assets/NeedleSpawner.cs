@@ -18,20 +18,19 @@ public class NeedleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        while ((Input.touchCount > 0 && hasTouched == false) && Time.time > nextFire)
-        {
+            while ((Input.touchCount > 0 && hasTouched == false) && Time.time > nextFire)
+            {
 
                 Instantiate(prefab, transform.position, transform.rotation);
                 nextFire = Time.time + fireRate;
                 hasTouched = true;
-        }
+            }
 
-        Touch touch = Input.GetTouch(0);
-        if(touch.phase == TouchPhase.Ended)
-        {
-            hasTouched = false;
-        }
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Ended)
+            {
+                hasTouched = false;
+            }
 
     }
 }

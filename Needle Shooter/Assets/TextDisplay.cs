@@ -7,6 +7,8 @@ public class TextDisplay : MonoBehaviour
 {
     public Text LevelText;
     public Text NeedlesText;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,4 +21,6 @@ public class TextDisplay : MonoBehaviour
         LevelText.text = "Level: " + EndGameManager.level;
         NeedlesText.text = "Pins: " + EndGameManager.pins;
     }
+
+
 }
