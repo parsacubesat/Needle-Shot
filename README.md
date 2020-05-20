@@ -1,2 +1,7 @@
 # Needle Shot
- Needle Shot Hame
+ Needle Shot Game
+ 
+ Included:
+ * Presentation
+ * PowerPoint Presentation
+ * APK build
