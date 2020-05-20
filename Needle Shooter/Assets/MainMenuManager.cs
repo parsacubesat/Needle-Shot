@@ -37,4 +37,10 @@ public class MainMenuManager : MonoBehaviour
         MenuClick.Play();
         SceneManager.LoadScene(2);
     }
+
+    public void TaskOnClickStore()
+    {
+        MenuClick.Play();
+        SceneManager.LoadScene(4);
+    }
 }

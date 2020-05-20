@@ -66,6 +66,8 @@
     <Compile Include="Assets\AudioSourceKeep.cs" />
     <Compile Include="Assets\BackButton.cs" />
     <Compile Include="Assets\CircleSpinner.cs" />
+    <Compile Include="Assets\CoinCountingScript.cs" />
+    <Compile Include="Assets\CoinDisplay.cs" />
     <Compile Include="Assets\EndGameManager.cs" />
     <Compile Include="Assets\GameOverManager.cs" />
     <Compile Include="Assets\MainMenuManager.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="Assets\NeedleSpawner.cs" />
     <Compile Include="Assets\PauseMenuManager.cs" />
     <Compile Include="Assets\PinCondition.cs" />
+    <Compile Include="Assets\PowerUpManager.cs" />
+    <Compile Include="Assets\ShopManager.cs" />
     <Compile Include="Assets\TextDisplay.cs" />
     <None Include="Assets\Sprites\Kenney\Animals\Spritesheet\round_nodetails.xml" />
     <None Include="Assets\Sprites\Kenney\Animals\Spritesheet\round_nodetails_outline.xml" />

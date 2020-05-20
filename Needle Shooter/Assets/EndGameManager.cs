@@ -18,6 +18,8 @@ public class EndGameManager : MonoBehaviour
     public float speedRangeMinimum = 0;
     public float speedRangeMaximum = 0;
 
+    public static float coinKeeper = 0;
+
     public AudioSource GameWonSound;
 
     // Start is called before the first frame update
@@ -41,6 +43,8 @@ public class EndGameManager : MonoBehaviour
         //Debug.Log("Level: " + level);
         //Debug.Log("Number of Pins: " + pins);
 
+        Debug.Log(coinKeeper);
+
     }
     public void GameWon()
     {
@@ -51,6 +55,7 @@ public class EndGameManager : MonoBehaviour
         }
         pins = currentPins + 2;
         level++;
+        coinKeeper++;
         float negativeSetter = Random.Range(0f, 1f);
 
         if (negativeSetter > 0.5)
